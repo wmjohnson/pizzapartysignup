@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/template}">
+<head>
+    <title>Thank You! Contact Submitted</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div layout:fragment="content" class="container">
+
+	    <div class="jumbotron">
+		<h1>Thank you for submitting!</h1>
+		<p>The below contact was submitted. You will be notified when pizza will be delivered.
+	    <p th:text="'id: ' + ${contact.id}" />
+	    <p th:text="'name: ' + ${contact.name}" />
+	    <p th:text="'phone: ' + ${contact.phone}" />
+	    <a href="/contact">Submit another contact to us</a>
+	    </div>
+    </div>
+	    
+</body>
+</html>

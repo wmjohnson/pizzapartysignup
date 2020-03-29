@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/template}">
+<head>
+    <title>Pizza Party Submit Contact Details!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div layout:fragment="content" class="container">
+
+	    <div class="jumbotron">
+		<h1>Sign Up!</h1>
+		<p>Provide your contact information for the free pizza promotion! You will be contacted by SMS for the day of delivery.</p>
+	    <form action="#" th:action="@{/contact}" th:object="${contact}" method="post">
+	        <p>Name: <input type="text" th:field="*{name}" /></p>
+	        <p>Email: <input type="text" th:field="*{email}" /></p>
+	        <p>Phone: <input type="text" th:field="*{phone}" /></p>
+	        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+	    </form>
+    
+    
+	    <hr>
+	    
+	    <p align="right">Admin Login
+	    
+	    <hr>
+	    
+	   	<div align="right" th:if="${param.error}">
+	           Invalid username and password.
+	     </div>
+	     <div align="right" th:if="${param.logout}">
+	         You have been logged out.
+	     </div>
+	     <form th:action="@{/login}" method="post">
+	         <div align="right"><label> User Name : <input type="text" name="username"/> </label></div>
+	         <div align="right"><label> Password: <input type="password" name="password"/> </label></div>
+	         <div align="right"><input type="submit" value="Sign In"/></div>
+	     </form>
+	     </div>
+	 </div>
+     
+</body>
+</html>
